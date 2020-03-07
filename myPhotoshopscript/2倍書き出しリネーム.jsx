@@ -1,31 +1,31 @@
-win = new Window("dialog", "ƒAƒZƒbƒgİ’è");
+win = new Window("dialog", "ã‚¢ã‚»ãƒƒãƒˆè¨­å®š");
 win.bounds  = [600,400,880,545];
 okbtn = win.add("button", { width: 80, height: 25, x: 40, y: 25 }, "OK");
 cnbtn = win.add("button", { width: 80, height: 25, x: 160, y: 25 }, "Cancel");
-chBox = win.add("Checkbox",[40,80,275,10+20],"‰æ‘œ‚Ì2”{(@2x)");
-rBtn1 = win.add("radiobutton",[40,110,80,10+20], "PNGŒ`®");
-rBtn2 = win.add("radiobutton",[160,110,80,30+20], "JPEGŒ`®");
+chBox = win.add("Checkbox",[40,80,275,10+20],"ç”»åƒã®2å€(@2x)");
+rBtn1 = win.add("radiobutton",[40,110,80,10+20], "PNGå½¢å¼");
+rBtn2 = win.add("radiobutton",[160,110,80,30+20], "JPEGå½¢å¼");
 okbtn.active = true;
 
 okbtn.onClick = function () {
 	if ((rBtn1.value == true) && (chBox.value == false)) {
-		app.activeDocument.suspendHistory("1”{JPEGƒŠƒl[ƒ€", "main01()");
+		app.activeDocument.suspendHistory("1å€JPEGãƒªãƒãƒ¼ãƒ ", "main01()");
 	} else if ((rBtn1.value == true) && (chBox.value == true)) {
-		app.activeDocument.suspendHistory("2”{JPEGƒŠƒl[ƒ€", "main02()");
+		app.activeDocument.suspendHistory("2å€JPEGãƒªãƒãƒ¼ãƒ ", "main02()");
 	} else if ((rBtn1.value == false) && (chBox.value == false)) {
-		app.activeDocument.suspendHistory("1”{PNGƒŠƒl[ƒ€", "main03()");
+		app.activeDocument.suspendHistory("1å€PNGãƒªãƒãƒ¼ãƒ ", "main03()");
 	} else if ((rBtn1.value == false) && (chBox.value == true)) {
-		app.activeDocument.suspendHistory("2”{PNGƒŠƒl[ƒ€", "main04()");
+		app.activeDocument.suspendHistory("2å€PNGãƒªãƒãƒ¼ãƒ ", "main04()");
 	} else {
-		app.activeDocument.suspendHistory("1”{JPEGƒŠƒl[ƒ€", "main01()");
+		app.activeDocument.suspendHistory("1å€JPEGãƒªãƒãƒ¼ãƒ ", "main01()");
 	}
 	win.close();
 }
 win.show();
 
 
-//¦if•¶‚Å•ª‚¯‚é‚æ‚è•¡”‘‚­•û‚ªˆ—‚ªŒy‚©‚Á‚½B
-	//QÆ“n‚µA”z—ñ‚Ì•¡”“n‚µ‚ÌAˆ—”ÍˆÍB
+//â€»ifæ–‡ã§åˆ†ã‘ã‚‹ã‚ˆã‚Šè¤‡æ•°æ›¸ãæ–¹ãŒå‡¦ç†ãŒè»½ã‹ã£ãŸã€‚
+	//å‚ç…§æ¸¡ã—ã€é…åˆ—ã®è¤‡æ•°æ¸¡ã—ã®ã€å‡¦ç†ç¯„å›²ã€‚
 function main01() {
 	if (app.documents.length) {
 		var docRef = app.activeDocument;
@@ -45,7 +45,8 @@ function main02() {
 		if (docRef.layers.length) {
 			var selected = getSelectedLayersIdx();
 			for (var i = 0; i < selected.length; i++) {
-				var assetName = selectByIndex(selected[i]).name + ".png, " + "200% " + selectByIndex(selected[i]).name+ "@2x.png";
+				// var assetName = selectByIndex(selected[i]).name + ".png, " + "200% " + selectByIndex(selected[i]).name+ "@2x.png";
+				var assetName = "200% " + selectByIndex(selected[i]).name+ "@2x.png";
 				selectByIndex(selected[i]).name = assetName;
 			}
 		}
@@ -71,7 +72,8 @@ function main04() {
 		if (docRef.layers.length) {
 			var selected = getSelectedLayersIdx();
 			for (var i = 0; i < selected.length; i++) {
-				var assetName = selectByIndex(selected[i]).name + ".jpg, " + "200% " + selectByIndex(selected[i]).name+ "@2x.jpg";
+				// var assetName = selectByIndex(selected[i]).name + ".jpg, " + "200% " + selectByIndex(selected[i]).name+ "@2x.jpg";
+				var assetName = "200% " + selectByIndex(selected[i]).name+ "@2x.jpg";
 				selectByIndex(selected[i]).name = assetName;
 			}
 		}
@@ -81,7 +83,7 @@ function main04() {
 
 
 
-//ŠeAƒAƒNƒeƒBƒuƒŒƒCƒ„[‚Ìƒf[ƒ^æ“¾
+//å„ã€ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒ‡ãƒ¼ã‚¿å–å¾—
 function getSelectedLayersIdx() {
 	var selectedLayers = new Array;
 	var ref = new ActionReference();
@@ -126,7 +128,7 @@ function getSelectedLayersIdx() {
 	return selectedLayers;
 }
 
-//æ“¾ƒf[ƒ^‚ÌŠi”[Ag—pŒ^‚É•ÏX
+//å–å¾—ãƒ‡ãƒ¼ã‚¿ã®æ ¼ç´ã€ä½¿ç”¨å‹ã«å¤‰æ›´
 function selectByIndex(idx) {
 	if (idx == 0) return;
 	if (idx.length != undefined) {

@@ -74,6 +74,7 @@ webデザインにおいてはデフォルトが通過なのはマイナスに�
 もっと詳しく知りたい人は
 ---
 1.[オリジナルのスクリプトの作り方 | Dearps](http://dearps.lovwar.com/2016/01/19/script-2/)
+
 1.[Adobe Photoshop CS6自動化作戦]( http://www.openspc2.org/book/PhotoshopCS6/)
 
 ![](https://img.yakkun.com/poke/icon960/n200.png)
